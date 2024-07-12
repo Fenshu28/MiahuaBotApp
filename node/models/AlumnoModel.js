@@ -10,6 +10,7 @@ const AlumnoModel = db.define('Alumnos', {
     nombre: {
         type: DataTypes.STRING
     },
+
 }, {
     timestamps: false // Deshabilitamos los timestamps
 })

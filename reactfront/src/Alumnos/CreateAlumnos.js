@@ -30,6 +30,8 @@ const CompCreateAlumno = () => {
         navigate('/')
     }
 
+    
+
     return (
         <div>
             <h3>Nuevo alumno</h3>
