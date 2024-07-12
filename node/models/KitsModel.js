@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Planes', {
-    idPlan: {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const KitsModel = db.define('Kits', {
+    idKit: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
       allowNull: false,
@@ -11,17 +12,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(30),
       allowNull: false
     },
-    precio: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    sesiones: {
+    Existencia: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
   }, {
-    sequelize,
-    tableName: 'Planes',
+    tableName: 'Kits',
     timestamps: false,
     indexes: [
       {
@@ -29,9 +25,10 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "idPlan" },
+          { name: "idKit" },
         ]
       },
     ]
   });
-};
+  
+  export default KitsModel

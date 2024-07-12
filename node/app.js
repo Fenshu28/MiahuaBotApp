@@ -1,13 +1,15 @@
 import express from "express";
 import cors from 'cors'
 import db from "./database/db.js";
-import alumnoRoutes from './routes/routes.js'
+import alumnoRoutes from './routes/AlumnosRoutes.js'
+import planesRoutes from './routes/PlanesRoutes.js'
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
 app.use('/alumnos',alumnoRoutes)
+app.use('/planes',planesRoutes)
 
 try {
     db.authenticate()

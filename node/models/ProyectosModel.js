@@ -1,22 +1,15 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Manuales', {
-    idManual: {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const ProyectosModel = db.define('Proyectos', {
+    idProyecto: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
       allowNull: false,
       primaryKey: true
     },
-    formato: {
-      type: DataTypes.STRING(5),
-      allowNull: false
-    },
-    fuente: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
-    urlManual: {
-      type: DataTypes.STRING(255),
+    nombre: {
+      type: DataTypes.STRING(30),
       allowNull: false
     },
     idKit: {
@@ -28,8 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    sequelize,
-    tableName: 'Manuales',
+    tableName: 'Proyectos',
     timestamps: false,
     indexes: [
       {
@@ -37,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "idManual" },
+          { name: "idProyecto" },
         ]
       },
       {
@@ -49,4 +41,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+  
+  export default ProyectosModel

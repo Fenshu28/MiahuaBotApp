@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Horarios', {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const HorariosModel = db.define('Horarios', {
     idHorario: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
@@ -28,7 +29,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    sequelize,
     tableName: 'Horarios',
     timestamps: false,
     indexes: [
@@ -49,4 +49,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+  export default HorariosModel

@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Archivos', {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const ArchivosModel = db.define('Archivos', {
     IdArchivo: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
@@ -24,7 +25,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    sequelize,
     tableName: 'Archivos',
     timestamps: false,
     indexes: [
@@ -45,4 +45,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+  export default ArchivosModel

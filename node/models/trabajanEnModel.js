@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('trabajanEn', {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const TrabajanEnModel = db.define('trabajanEn', {
     idHorario: {
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
       allowNull: false,
@@ -20,7 +21,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    sequelize,
     tableName: 'trabajanEn',
     timestamps: false,
     indexes: [
@@ -42,4 +42,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+  
+  export default TrabajanEnModel

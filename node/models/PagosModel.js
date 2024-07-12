@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Pagos', {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const PagosModel = db.define('Pagos', {
     folio: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
@@ -40,7 +41,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    sequelize,
     tableName: 'Pagos',
     timestamps: false,
     indexes: [
@@ -68,4 +68,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+  export default PagosModel

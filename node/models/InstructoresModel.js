@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Instructores', {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const InstructoresModel = db.define('Instructores', {
     nombre: {
       type: DataTypes.STRING(45),
       allowNull: false
@@ -29,7 +30,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    sequelize,
     tableName: 'Instructores',
     timestamps: false,
     indexes: [
@@ -51,4 +51,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+  
+  export default InstructoresModel

@@ -1,31 +1,35 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Actividades', {
-    idActividad: {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const ManualesModel = db.define('Manuales', {
+    idManual: {
       autoIncrement: true,
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
       allowNull: false,
       primaryKey: true
     },
-    Nombre: {
-      type: DataTypes.STRING(30),
+    formato: {
+      type: DataTypes.STRING(5),
       allowNull: false
     },
-    Complejidad: {
-      type: DataTypes.STRING(15),
+    fuente: {
+      type: DataTypes.STRING(50),
       allowNull: false
     },
-    idProyecto: {
+    urlManual: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
+    idKit: {
       type: DataTypes.INTEGER.UNSIGNED.ZEROFILL,
       allowNull: false,
       references: {
-        model: 'Proyectos',
-        key: 'idProyecto'
+        model: 'Kits',
+        key: 'idKit'
       }
     }
   }, {
-    sequelize,
-    tableName: 'Actividades',
+    tableName: 'Manuales',
     timestamps: false,
     indexes: [
       {
@@ -33,16 +37,17 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "idActividad" },
+          { name: "idManual" },
         ]
       },
       {
-        name: "idProyecto",
+        name: "idKit",
         using: "BTREE",
         fields: [
-          { name: "idProyecto" },
+          { name: "idKit" },
         ]
       },
     ]
   });
-};
+  
+  export default ManualesModel

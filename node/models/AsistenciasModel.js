@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('asistencias', {
+import db from "../database/db.js";
+import { DataTypes } from "sequelize";
+
+const AsistenciasModel = db.define('asistencias', {
     estado: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -32,7 +33,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    sequelize,
     tableName: 'asistencias',
     timestamps: false,
     indexes: [
@@ -54,4 +54,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+  export default AsistenciasModel

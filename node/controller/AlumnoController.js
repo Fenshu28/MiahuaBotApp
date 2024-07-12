@@ -1,11 +1,11 @@
-import AlumnoModel from "../models/AlumnoModel.js";
+import AlumnosModel from "../models/AlumnosModel.js";
 
 // Métodos para el crud
 
 // Mostrar todos los registros
 export const getAllAlmunos = async (req, res) => {
     try {
-        const alumnos = await AlumnoModel.findAll()
+        const alumnos = await AlumnosModel.findAll()
         res.json(alumnos)
     } catch (error) {
         res.json({ message: error.message })
@@ -15,7 +15,7 @@ export const getAllAlmunos = async (req, res) => {
 // Mostrar un registro
 export const getAlumno = async (req, res) => {
     try {
-        const alumno = await AlumnoModel.findAll({
+        const alumno = await AlumnosModel.findAll({
             where: {
                 matricula: req.params.id
             }
@@ -29,7 +29,7 @@ export const getAlumno = async (req, res) => {
 //Crear un registro
 export const createAlumno = async (req, res) => {
     try {
-        await AlumnoModel.create(req.body)
+        await AlumnosModel.create(req.body)
         res.json({
             "message": "¡Alumno registrado correctamente!"
         })
@@ -41,7 +41,7 @@ export const createAlumno = async (req, res) => {
 // Actualizar un registro
 export const updateAlumno = async (req, res) => {
     try {
-        await AlumnoModel.update(req.body, {
+        await AlumnosModel.update(req.body, {
             where: {
                 matricula: req.params.id
             }
@@ -57,7 +57,7 @@ export const updateAlumno = async (req, res) => {
 // Eliminar un registro
 export const deleteAlumno = async (req, res) => {
     try {
-        await AlumnoModel.destroy({
+        await AlumnosModel.destroy({
             where: {
                 matricula: req.params.id
             }
