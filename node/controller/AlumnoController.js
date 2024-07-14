@@ -3,7 +3,7 @@ import AlumnosModel from "../models/AlumnosModel.js";
 // Métodos para el crud
 
 // Mostrar todos los registros
-export const getAllAlmunos = async (req, res) => {
+export const getAllAlumnos = async (req, res) => {
     try {
         const alumnos = await AlumnosModel.findAll()
         res.json(alumnos)
