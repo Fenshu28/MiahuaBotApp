@@ -1,5 +1,6 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import KitsModel from "./KitsModel.js";
 
 const ManualesModel = db.define('Manuales', {
     idManual: {
@@ -48,6 +49,10 @@ const ManualesModel = db.define('Manuales', {
         ]
       },
     ]
+  });
+
+  ManualesModel.belongsTo(KitsModel, {
+    foreignKey: 'idKit'
   });
   
   export default ManualesModel

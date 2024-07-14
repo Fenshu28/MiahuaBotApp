@@ -1,5 +1,6 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import AvancesModel from "./avancesModel.js";
 
 const ArchivosModel = db.define('Archivos', {
     IdArchivo: {
@@ -44,6 +45,10 @@ const ArchivosModel = db.define('Archivos', {
         ]
       },
     ]
+  });
+
+  ArchivosModel.belongsTo(AvancesModel, {
+    foreignKey: 'idAvance'
   });
 
   export default ArchivosModel

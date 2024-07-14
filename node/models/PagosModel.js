@@ -1,5 +1,7 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import AlumnosModel from "./AlumnosModel.js";
+import PlanesModel from "./PlanesModelo.js";
 
 const PagosModel = db.define('Pagos', {
     folio: {
@@ -67,6 +69,13 @@ const PagosModel = db.define('Pagos', {
         ]
       },
     ]
+  });
+
+  PagosModel.belongsTo(AlumnosModel, {
+    foreignKey: 'matricula'
+  });
+  PagosModel.belongsTo(PlanesModel, {
+    foreignKey: 'idPlan'
   });
 
   export default PagosModel

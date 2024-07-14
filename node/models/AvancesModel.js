@@ -1,5 +1,6 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import ActividadesModel from "./ActividadesModel.js";
 const AvancesModel = db.define('avances', {
     estado: {
       type: DataTypes.INTEGER,
@@ -58,6 +59,10 @@ const AvancesModel = db.define('avances', {
         ]
       },
     ]
+  });
+
+  AvancesModel.belongsTo(ActividadesModel, {
+    foreignKey: 'idActividad'
   });
 
   export default AvancesModel

@@ -1,5 +1,6 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import PlanesModel from "./PlanesModelo.js";
 
 const HorariosModel = db.define('Horarios', {
     idHorario: {
@@ -48,6 +49,10 @@ const HorariosModel = db.define('Horarios', {
         ]
       },
     ]
+  });
+
+  HorariosModel.belongsTo(PlanesModel, {
+    foreignKey: 'idPlan'
   });
 
   export default HorariosModel

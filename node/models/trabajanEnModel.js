@@ -1,5 +1,7 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import InstructoresModel from "./InstructoresModel.js";
+import HorariosModel from "./HorariosModel.js";
 
 const TrabajanEnModel = db.define('trabajanEn', {
     idHorario: {
@@ -41,6 +43,13 @@ const TrabajanEnModel = db.define('trabajanEn', {
         ]
       },
     ]
+  });
+  
+  TrabajanEnModel.belongsTo(InstructoresModel, {
+    foreignKey: 'idInstructor'
+  });
+  TrabajanEnModel.belongsTo(HorariosModel, {
+    foreignKey: 'idHorario'
   });
   
   export default TrabajanEnModel
