@@ -3,10 +3,10 @@ import { createManual, deleteManual, getAllManuales, getManual, updateManual } f
 
 const r = express.Router()
 
-r.get('/',getAllManuales())
-r.get('/:id',getManual())
-r.post('/',createManual())
-r.put('/:id',updateManual())
-r.delete('/:id',deleteManual())
+r.get('/',getAllManuales)
+r.get('/:id',getManual)
+r.post('/',createManual)
+r.put('/:id',updateManual)
+r.delete('/:id',deleteManual)
 
 export default r

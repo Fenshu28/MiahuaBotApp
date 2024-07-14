@@ -3,10 +3,10 @@ import { createAvance, deleteAvance, getAllAvances, getAvance, updateAvance } fr
 
 const r = express.Router()
 
-r.get('/',getAllAvances())
-r.get('/:id',getAvance())
-r.post('/',createAvance())
-r.put('/:id',updateAvance())
-r.delete(':id',deleteAvance())
+r.get('/',getAllAvances)
+r.get('/:id',getAvance)
+r.post('/',createAvance)
+r.put('/:id',updateAvance)
+r.delete(':id',deleteAvance)
 
 export default r

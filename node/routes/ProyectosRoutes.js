@@ -3,10 +3,10 @@ import { createProyecto, deleteProyecto, getAllProyectos, getProyecto, updatePro
 
 const r = express.Router()
 
-r.get('/',getAllProyectos())
-r.get('/:id',getProyecto())
-r.post('/',createProyecto())
-r.put('/:id',updateProyecto())
-r.delete('/:id',deleteProyecto())
+r.get('/',getAllProyectos)
+r.get('/:id',getProyecto)
+r.post('/',createProyecto)
+r.put('/:id',updateProyecto)
+r.delete('/:id',deleteProyecto)
 
 export default r

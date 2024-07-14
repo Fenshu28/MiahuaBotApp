@@ -3,10 +3,10 @@ import { createInstructor, deleteInstructor, getAllInstructores, getInstructor, 
 
 const r = express.Router()
 
-r.get('/',getAllInstructores())
-r.get('/:id',getInstructor())
-r.post('/',createInstructor())
-r.put('/:id',updateInstructor())
-r.delete('/:id',deleteInstructor())
+r.get('/',getAllInstructores)
+r.get('/:id',getInstructor)
+r.post('/',createInstructor)
+r.put('/:id',updateInstructor)
+r.delete('/:id',deleteInstructor)
 
 export default r

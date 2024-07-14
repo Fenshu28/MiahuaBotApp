@@ -3,10 +3,10 @@ import { createTrabajaEn, deleteTrabajaEn, getAllTrabajanEn, getTrabajaEn, updat
 
 const r = express.Router()
 
-r.get('/',getAllTrabajanEn())
-r.get('/:idM,:idH',getTrabajaEn())
-r.post('/',createTrabajaEn())
-r.put('/:idM,:idH',updateTrabajaEn())
-r.delete('/:idM,:idH',deleteTrabajaEn())
+r.get('/',getAllTrabajanEn)
+r.get('/:idM,:idH',getTrabajaEn)
+r.post('/',createTrabajaEn)
+r.put('/:idM,:idH',updateTrabajaEn)
+r.delete('/:idM,:idH',deleteTrabajaEn)
 
 export default r

@@ -3,10 +3,10 @@ import { createAsistencia, deleteAsistencia, getAllAsistencias, getAsistencia, u
 
 const r = express.Router()
 
-r.get('/',getAllAsistencias())
-r.get('/:idM,:idH',getAsistencia())
-r.post('/',createAsistencia())
-r.put('/:idM,:idH',updateAsistencia())
-r.delete('/:idM,:idH',deleteAsistencia())
+r.get('/',getAllAsistencias)
+r.get('/:idM,:idH',getAsistencia)
+r.post('/',createAsistencia)
+r.put('/:idM,:idH',updateAsistencia)
+r.delete('/:idM,:idH',deleteAsistencia)
 
 export default r

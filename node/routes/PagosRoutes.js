@@ -3,10 +3,10 @@ import { createPago, deletePago, getAllPagos, getPago, updatePago } from "../con
 
 const r = express.Router()
 
-r.get('/',getAllPagos())
-r.get('/:id',getPago())
-r.post('/',createPago())
-r.put('/:id',updatePago())
-r.delete('/:id',deletePago())
+r.get('/',getAllPagos)
+r.get('/:id',getPago)
+r.post('/',createPago)
+r.put('/:id',updatePago)
+r.delete('/:id',deletePago)
 
 export default r

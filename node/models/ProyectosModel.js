@@ -1,5 +1,6 @@
 import db from "../database/db.js";
 import { DataTypes } from "sequelize";
+import ActividadesModel from "./ActividadesModel.js";
 
 const ProyectosModel = db.define('Proyectos', {
     idProyecto: {

@@ -14,7 +14,7 @@ import manualesRoutes from './routes/ManualesRoutes.js'
 import pagosRoutes from './routes/PagosRoutes.js'
 import planesRoutes from './routes/PlanesRoutes.js'
 import proyectosRoutes from './routes/ProyectosRoutes.js'
-import trabajanEnRoutes from './routes/TrabajaEnRoutes.js'
+import trabajanEnRoutes from './routes/TrabajanEnRoutes.js'
 
 const app = express()
 
