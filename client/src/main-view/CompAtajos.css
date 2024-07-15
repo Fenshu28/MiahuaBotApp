@@ -1,0 +1,21 @@
+/* CompMenu.css */
+.icon-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-item {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef;
+}
+
+.list-group-item span {
+    flex: 1;
+}
